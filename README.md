@@ -20,4 +20,4 @@ Load removal and quality of life features such as autosplitting at the end of ea
 * [Twitter](https://twitter.com/MrTheIntercom)
 
 ### Credits
-- This repository is based on Dalet's original repository (<a href="https://github.com/Dalet/LiveSplit.Shrek2">LiveSplit.Shrek2</a>)
+- This repository is based on Dalet's original repository (<a href="https://github.com/Dalet/LiveSplit.UnrealLoads">LiveSplit.UnrealLoads</a>)
