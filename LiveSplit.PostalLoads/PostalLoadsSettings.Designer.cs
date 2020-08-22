@@ -274,11 +274,6 @@
             this.labAWComingSoon.Text = "Coming Soon";
             this.labAWComingSoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // mapBindingSource
-            // 
-            this.mapBindingSource.AllowNew = true;
-            this.mapBindingSource.DataSource = typeof(LiveSplit.PostalLoads.Map);
-            // 
             // PostalLoadsSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

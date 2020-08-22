@@ -47,7 +47,7 @@ namespace LiveSplit.PostalLoads
 			settingsNode.AppendChild(SettingsHelper.ToElement(doc, "Version", Assembly.GetExecutingAssembly().GetName().Version.ToString(3)));
 			settingsNode.AppendChild(SettingsHelper.ToElement(doc, "AutoStart", AutoStart));
 			settingsNode.AppendChild(SettingsHelper.ToElement(doc, "AutoReset", AutoReset));
-			settingsNode.AppendChild(SettingsHelper.ToElement(doc, "AutoReset", AutoSplitP2));
+			settingsNode.AppendChild(SettingsHelper.ToElement(doc, "AutoSplitP2", AutoSplitP2));
 
 			return settingsNode;
 		}
@@ -58,7 +58,7 @@ namespace LiveSplit.PostalLoads
 
 			AutoStart = SettingsHelper.ParseBool(settings["AutoStart"], DEFAULT_AUTOSTART);
 			AutoReset = SettingsHelper.ParseBool(settings["AutoReset"], DEFAULT_AUTORESET);
-			AutoReset = SettingsHelper.ParseBool(settings["AutoReset"], DEFUALT_AUTOSPLIT_P2);
+			AutoSplitP2 = SettingsHelper.ParseBool(settings["AutoSplitP2"], DEFUALT_AUTOSPLIT_P2);
         }
 	}
 }
