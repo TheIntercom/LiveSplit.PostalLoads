@@ -1,5 +1,11 @@
-﻿using LiveSplit.ComponentUtil;
+﻿/*
+using LiveSplit.ComponentUtil;
 using LiveSplit.Options;
+using System.Collections.Generic;
+using System.Diagnostics;
+*/
+
+using LiveSplit.ComponentUtil;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -115,6 +121,31 @@ namespace LiveSplit.PostalLoads.Games
 			"VincesHouse",
 			"WestMall"
 		};
+
+		private readonly HashSet<string> _relaventModules = new HashSet<string>
+		{
+			"Postal2.exe",
+			"Core.dll",
+			"Engine.dll"
+		};
+
+		public override IdentificationResult IdentifyProcess(Process process)
+		{
+			Debug.WriteLine($"[NoLoads] Identifying which process we are dealing with.");
+			Debug.WriteLine("[NoLoads] --------------------------------------");
+
+			var p = process.ModulesWow64Safe();
+
+			foreach (var m in p)
+			{
+				if (_relaventModules.Contains(m.ModuleName))
+					Debug.WriteLine($"[NoLoads] Module: {m.ModuleName} ({m.ModuleMemorySize})");
+			}
+
+			Debug.WriteLine("[NoLoads] --------------------------------------");
+
+			return IdentificationResult.Success;
+		}
 
 		StringWatcher _map;
 
