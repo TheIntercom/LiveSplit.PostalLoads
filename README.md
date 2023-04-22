@@ -1,6 +1,11 @@
 # LiveSplit.PostalLoads
 Load removal and autosplitting for Postal 2.
 
+### Automatic Installation (Recommended)
+1. Right-click LiveSplit and **Edit Splits**
+2. Change the **Game Name** to 'Postal 2'
+3. Click 'Activate'
+
 ### Manual Installation
 1. Take the .dll from the 'Component' folder and place it in the component folder in the LiveSplit directory.
 2. Right-click LiveSplit and **Edit Splits**
