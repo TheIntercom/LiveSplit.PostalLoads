@@ -64,8 +64,25 @@ namespace LiveSplit.PostalLoads
 
 		void _gameMemory_OnMapChange(object sender, string prevMap, string nextMap)
 		{
-			if (nextMap == "homeatnight" && Settings.AutoSplitP2) //bad but i want it
-				_timer.Split();
+			if (Settings.AutoStart)
+			{
+				Debug.WriteLine($"[NoLoads] onMapChange -> {prevMap} to {nextMap}");
+
+				// starting monday + no intro and IL runs of the rest of the week as well, score
+				if (prevMap == "Startup" && nextMap == "suburbs-3" && _state.CurrentPhase == TimerPhase.NotRunning)
+				{
+					_timer.Start();
+				}
+			}
+
+			if (Settings.AutoSplitP2)
+			{
+				// hacky but lets us keep traditional timing for splitting in postal 2
+				if (nextMap == "homeatnight")
+				{
+					_timer.Split();
+				}
+			}
 		}
 
 		public override void Dispose()
@@ -84,9 +101,12 @@ namespace LiveSplit.PostalLoads
 
 		void gameMemory_OnStart(object sender, EventArgs e)
 		{
-			if (_state.CurrentPhase == TimerPhase.NotRunning && Settings.AutoStart)
+			if (Settings.AutoStart)
 			{
-				_timer.Start();
+				if (_state.CurrentPhase == TimerPhase.NotRunning)
+				{
+					_timer.Start();
+				}
 			}
 		}
 

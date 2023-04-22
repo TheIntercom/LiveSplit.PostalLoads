@@ -20,6 +20,8 @@
 *.userosscache
 *.sln.docstates
 .vs/*
+LiveSplit/*
+*.patch
 
 # Visual Studio profiler
 *.psess

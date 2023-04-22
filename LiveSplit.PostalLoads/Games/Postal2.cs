@@ -121,6 +121,8 @@ namespace LiveSplit.PostalLoads.Games
 		public override LoadMapDetour GetNewLoadMapDetour() => new LoadMapDetour_Postal2();
 		public override SaveGameDetour GetNewSaveGameDetour() => new SaveGameDetour_Postal2();
 
+		// i always forget but some of the logic involving auto-split and auto-start are handled by the component file
+		// really about due for a refactor lmfao
 		public override TimerAction[] OnUpdate(Process game, MemoryWatcherList watchers)
 		{
 			var status = (MemoryWatcher<int>)watchers["status"];
@@ -141,6 +143,7 @@ namespace LiveSplit.PostalLoads.Games
 						return new TimerAction[] { TimerAction.Reset };
 				}
 			}
+
 			return null;
 		}
 
@@ -192,6 +195,5 @@ namespace LiveSplit.PostalLoads.Games
 		{
 			public override string Symbol => "?SaveGame@UGameEngine@@UAEHH@Z";
 		}
-
-		}
 	}
+}
