@@ -1,9 +1,9 @@
 # LiveSplit.PostalLoads
-Load removal and autosplitting for Postal 2.
+Load removal and autosplitting for Postal 2, Apocalypse Weekend, and Paradise Lost.
 
 ### Automatic Installation (Recommended)
 1. Right-click LiveSplit and **Edit Splits**
-2. Change the **Game Name** to 'Postal 2'
+2. Change the **Game Name** to 'Postal 2', 'Postal 2: Apocalypse Weekend', or 'Postal 2: Paradise Lost'
 3. Click 'Activate'
 
 ### Manual Installation
@@ -20,6 +20,15 @@ Load removal and quality of life features such as autosplitting at the end of ea
 ### Changelog
 #### 1.0.0
 - Initial release
+
+#### 1.1.0
+- Added basic support for 5100 and xPatch ILs.
+
+#### 1.2.0
+- Added full support for Apocalypse Weekend and Paradise Lost.
+- Updated the menu to reflect these changes.
+- Added full support for AWP and TWP runs.
+- Added a "Week Runs" setting which suppresses auto reset from triggering during the AW and PL intro cutscenes.
 
 ### Contact
 * [Twitter](https://twitter.com/MrTheIntercom)

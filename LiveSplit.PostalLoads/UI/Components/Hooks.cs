@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
-namespace LiveSplit.PostalLoads
+namespace LiveSplit.UI.Components
 {
 	public enum StringType
 	{

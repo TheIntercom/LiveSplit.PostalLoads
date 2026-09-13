@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace LiveSplit.PostalLoads
+namespace LiveSplit.UI.Components
 {
 	//didn't test 64-bit
 	public class ExportTableParser

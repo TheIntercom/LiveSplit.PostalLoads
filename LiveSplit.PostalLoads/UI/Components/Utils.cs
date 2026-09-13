@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 
-namespace LiveSplit.PostalLoads
+namespace LiveSplit.UI.Components
 {
 	internal static class Utils
 	{

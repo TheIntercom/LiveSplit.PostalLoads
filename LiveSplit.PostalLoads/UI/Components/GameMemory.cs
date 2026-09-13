@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LiveSplit.PostalLoads
+namespace LiveSplit.UI.Components
 {
 	enum Status
 	{

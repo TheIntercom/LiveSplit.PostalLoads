@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../../LiveSplit/src/LiveSplit.Core/LiveSplit.Core.csproj" />
+  <Project Path="../../LiveSplit/src/UpdateManager/UpdateManager.csproj" />
+  <Project Path="LiveSplit.TestTest/LiveSplit.PostalLoads.csproj" Id="08595779-f53c-45c3-b5b2-b2ea1821a59f" />
+</Solution>
