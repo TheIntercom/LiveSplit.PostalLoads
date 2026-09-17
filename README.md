@@ -1,10 +1,10 @@
 # LiveSplit.PostalLoads
-Load removal and autosplitting for Postal 2, Apocalypse Weekend, and Paradise Lost.
+LiveSplit component that provides load removal and autosplitting for Postal 2, Apocalypse Weekend, and Paradise Lost.
 
 ### Automatic Installation (Recommended)
-1. Right-click LiveSplit and **Edit Splits**
-2. Change the **Game Name** to 'Postal 2', 'Postal 2: Apocalypse Weekend', or 'Postal 2: Paradise Lost'
-3. Click 'Activate'
+1. Run LiveSplit, right-click the timer, and select **Edit Splits**
+2. Change the **Game Name** to `Postal 2`, `Postal 2: Apocalypse Weekend`, or `Postal 2: Paradise Lost`
+3. Click `Activate`
 
 ### Manual Installation
 1. Take the .dll from the 'Component' folder and place it in the component folder in the LiveSplit directory.
@@ -15,7 +15,19 @@ Load removal and autosplitting for Postal 2, Apocalypse Weekend, and Paradise Lo
 6. Right-click and **Compare Against -> Game Time**
 
 ### Features
-Load removal and quality of life features such as autosplitting at the end of each day, autorestart/autostart when loading intro cutscene.
+#### Auto Reset
+Resets the timer when the intro cinematic begins loading.
+- `Apocalypse Weekend` -> Only if **Week Runs** is **off**
+- `Paradise Lost` -> Only if **Week Runs** is **off**
+##### Week Runs
+Prevents the AW and PL intro cinematic cutscenes from resetting the timer to allow for AWP and TWP runs.
+#### Auto Start
+Starts the timer when we begin a new game (on any day of the week), but only if the timer is reset.
+#### Auto Split
+Splits the timer when we begin loading a specific map.
+- `Postal 2` -> When end-of-night cutscene begins loading *(5 segments)*
+- `Apocalypse Weekend` -> When a new map begins loading that is not `awstartup` or `hospital` *(22 segments)*
+- `Paradise Lost` -> When a new day begins loading, the start of Showdown, the start of Apocalypse, Outro cutscene begins *(7 segments)*
 
 ### Changelog
 #### 1.0.0
