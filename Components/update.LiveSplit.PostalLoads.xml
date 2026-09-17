@@ -1,0 +1,20 @@
+<updates>
+  <update version="1.2.0">
+    <files>
+      <file path="Components/LiveSplit.PostalLoads.dll" status="changed"/>
+    </files>
+    <changelog>
+      <change>Added full support for Apocalypse Weekend and Paradise Lost.</change>
+      <change>Simplified settings screen.  All game specific settings are now handled automatically.</change>
+      <change>Added a new setting (Week Runs) to allow for A Week In Paradise and Two Weeks In Paradise runs even if auto reset is activated.</change>
+    </changelog>
+  </update>
+  <update version="1.1.0">
+    <files>
+      <file path="Components/LiveSplit.PostalLoads.dll" status="changed"/>
+    </files>
+    <changelog>
+      <change>Added auto starting for ILs runs on Postal 2.</change>
+    </changelog>
+  </update>
+</updates>
