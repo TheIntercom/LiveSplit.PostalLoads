@@ -114,11 +114,35 @@ namespace LiveSplit.UI.Components
                         _timer.Start();
                     }
                 }
+
+                // corkscrew rules
+                if (n == "tubeintro")
+                {
+                    _autoSplitBehavior = AutoSplitBehavior.EndOfDay;
+
+                    if (Settings.AutoReset)
+                    {
+                        _timer.Reset();
+                        _timer.Start();
+                    }
+                }
+
+                // eternal damnation
+                if (n == "ed_ss_basement")
+                {
+                    _autoSplitBehavior = AutoSplitBehavior.EndOfMap;
+
+                    if (Settings.AutoReset)
+                    {
+                        _timer.Reset();
+                        _timer.Start();
+                    }
+                }
             }
 
             if (Settings.AutoStart && _state.CurrentPhase == TimerPhase.NotRunning)
             {
-                if (p == "startup" || p == "awstartup" || p == "startup-apocalypse" || p == "startup-halloween")
+                if (p == "startup" || p == "awstartup" || p == "startup-apocalypse" || p == "startup-halloween" || p == "tubestartup")
                 {
                     // postal 2 -> monday to friday
                     if (n == "intro" || n == "suburbs-3")
@@ -127,7 +151,7 @@ namespace LiveSplit.UI.Components
                         _autoSplitBehavior = AutoSplitBehavior.EndOfDay;
                     }
 
-                    // aw -> saturday and sunday
+                    // aw -> saturday and sunday (but actually linear)
                     if (n == "movieintro" || n == "hospital" || n == "vinceshouse")
                     {
                         _timer.Start();
@@ -147,28 +171,47 @@ namespace LiveSplit.UI.Components
                         _timer.Start();
                         _autoSplitBehavior = AutoSplitBehavior.EndOfDay;
                     }
+
+                    // corkscrew rules -> monday to thursday
+                    if (n == "tubeintro"
+                        || n == "psih"
+                        || n == "dudehouse")
+                    {
+                        _timer.Start();
+                        _autoSplitBehavior = AutoSplitBehavior.EndOfDay;
+                    }
+
+                    // eternal damnation (linear)
+                    if (n == "ed_ss_basement")
+                    {
+                        _timer.Start();
+                        _autoSplitBehavior = AutoSplitBehavior.EndOfMap;
+                    }
                 }
             }
 
             if (Settings.AutoSplit)
             {
-                // postal 2 -> split when end-of-day cutscene is entered
+                // postal 2 -> split when end-of-day cutscene has begun
                 if (n == "homeatnight")
                 {
                     _timer.Split();
                 }
 
-                // aw -> split when a new map is entered (but not to the title screen)
+                // apocalypse weekend -> split when a new map is entered (but not to the title screen)
+                // eternal damnation  -> same thing
                 if (_autoSplitBehavior == AutoSplitBehavior.EndOfMap)
                 {
-                    if ((n != "startup" && n != "awstartup" && n != "startup-apocalypse" && n != "startup-halloween" && n != "movieintro" && n != "hospital")
+                    if ((n != "startup" && n != "awstartup" && n != "startup-apocalypse" && n != "startup-halloween"
+                        && n != "movieintro" && n != "hospital" && n != "moviepigeons"
+                        && n != "ed_ss_basement" && n != "1")
                         && (n != p))
                     {
                         _timer.Split();
                     }
                 }
 
-                // pl -> split when certain maps are entered a specific way
+                // paradise lost -> split when certain maps are entered a specific way
                 if ((p == "bridge" && n == "pl-intro")
                     || (p == "pl-endofmonday" && n == "pl-church")
                     || (p == "pl-church" && n == "pl-junkyard")
@@ -177,6 +220,14 @@ namespace LiveSplit.UI.Components
                     || (p == "pl-torabora" && n == "pl-hell_ent")
                     || (p == "pl-finalboss" && n == "pl-suburbs-3")
                     || (p == "pl-highlands" && n == "pl-outro"))
+                {
+                    _timer.Split();
+                }
+
+                // corkscrew rules -> split when end-of-day cutscene has ended or credits have begun
+                if ((p == "dudehouseatnight" && n == "dudehouse")
+                    || (p == "oto" && n == "dudehouse")
+                    || (p == "oto" && n == "tubeoutro"))
                 {
                     _timer.Split();
                 }

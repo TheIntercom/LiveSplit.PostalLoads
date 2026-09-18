@@ -1,4 +1,14 @@
 <updates>
+  <update version="1.3.0">
+    <files>
+      <file path="Components/LiveSplit.PostalLoads.dll" status="changed"/>
+    </files>
+    <changelog>
+      <change>PostalLoads should now support all old versions of Postal 2!</change>
+      <change>Added full support for Corkscrew Rules and Eternal Damnation.</change>
+      <change>The autoupdate should work now! No more manually deleting files!</change>
+    </changelog>
+  </update>
   <update version="1.2.0">
     <files>
       <file path="Components/LiveSplit.PostalLoads.dll" status="changed"/>
