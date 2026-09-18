@@ -20,6 +20,6 @@ namespace LiveSplit.UI.Components
 
         public string UpdateURL => "https://raw.githubusercontent.com/TheIntercom/LiveSplit.PostalLoads/master/";
 
-        public string XMLURL => "Components/update.LiveSplit.PostalLoads.xml";
+        public string XMLURL => UpdateURL + "Components/update.LiveSplit.PostalLoads.xml";
     }
 }

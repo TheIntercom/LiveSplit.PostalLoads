@@ -32,6 +32,9 @@ Splits the timer when we begin loading a specific map.
 - `Eternal Damnation` -> When a new map begins loading that is not `startup` or `ed_ss_basement` or `1` *(22 segments)*
 
 ### Changelog
+#### 1.3.1
+- The autoupdate should finally work... Part 2.
+
 #### 1.3.0
 - PostalLoads now has much better support for old versions of Postal 2!
 - Added full support for Corkscrew Rules and Eternal Damnation.
